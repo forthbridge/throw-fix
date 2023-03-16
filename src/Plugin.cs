@@ -29,6 +29,23 @@ namespace ThrowFix
             Logger = base.Logger;
 
             new Hook(typeof(Player).GetProperty(nameof(Player.ThrowDirection)).GetGetMethod(), Player_ThrowDirection);
+
+            On.Weapon.Thrown += Weapon_Thrown;
+            On.Weapon.Shoot += Weapon_Shoot;
+        }
+
+        private void Weapon_Shoot(On.Weapon.orig_Shoot orig, Weapon self, Creature shotBy, UnityEngine.Vector2 thrownPos, UnityEngine.Vector2 throwDir, float force, bool eu)
+        {
+            orig(self, shotBy, thrownPos, throwDir, force, eu);
+
+            self.changeDirCounter = 0;
+        }
+
+        private void Weapon_Thrown(On.Weapon.orig_Thrown orig, Weapon self, Creature thrownBy, UnityEngine.Vector2 thrownPos, UnityEngine.Vector2? firstFrameTraceFromPos, RWCustom.IntVector2 throwDir, float frc, bool eu)
+        {
+            orig(self, thrownBy, thrownPos, firstFrameTraceFromPos, throwDir, frc, eu);
+
+            self.changeDirCounter = 0;
         }
 
         private int Player_ThrowDirection(Func<Player, int> orig, Player self)
