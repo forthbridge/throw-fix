@@ -1,0 +1,5 @@
+[h1]Prevents thrown objects changing direction mid-air when turning![/h1]
+
+[b](Despite being called a fix, this behavior is actually intended)[/b]
+
+[b][u]Source: https://github.com/forthbridge/throw-fix[/u][/b]
