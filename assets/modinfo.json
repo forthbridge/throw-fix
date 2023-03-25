@@ -2,7 +2,7 @@
 	"id": "throwfix",
 	"name": "Throw Fix",
 	"version": "1.0.0",
-	"authors": "forthbridge",
+	"authors": "forthbridge & badgerotter (thumbnail)",
 	"description": "Prevents thrown objects changing direction mid-air when turning!<LINE><LINE>(Despite being called a fix, this behavior is actually intended)<LINE><LINE>Source: https://github.com/forthbridge/throw-fix",
 	"requirements": [],
 	"requirements_names": [],

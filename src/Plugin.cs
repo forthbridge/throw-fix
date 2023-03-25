@@ -32,6 +32,7 @@ namespace ThrowFix
 
             On.Weapon.Thrown += Weapon_Thrown;
             On.Weapon.Shoot += Weapon_Shoot;
+
         }
 
         private void Weapon_Shoot(On.Weapon.orig_Shoot orig, Weapon self, Creature shotBy, UnityEngine.Vector2 thrownPos, UnityEngine.Vector2 throwDir, float force, bool eu)
